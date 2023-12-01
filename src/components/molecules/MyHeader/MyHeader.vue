@@ -4,8 +4,8 @@ import MyButton from '../../atoms/MyButton/MyButton.vue'
 const props = defineProps({
   isLoggedIn: {
     type: Boolean,
-    required: true,
-  },
+    required: true
+  }
 })
 
 interface Emits {

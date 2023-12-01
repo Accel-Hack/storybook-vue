@@ -3,11 +3,11 @@ import { reactive } from 'vue'
 
 const state = reactive({
   name: '',
-  age: 18,
+  age: 18
 })
 const errors = reactive({
   name: '',
-  age: '',
+  age: ''
 })
 
 const emits = defineEmits<{

@@ -8,7 +8,7 @@ const meta: Meta<typeof MyPage> = {
   component: MyPage,
   render: () => ({
     components: { MyPage },
-    template: '<MyPage />',
+    template: '<MyPage />'
   }),
   parameters: {
     backgrounds: {
@@ -16,15 +16,15 @@ const meta: Meta<typeof MyPage> = {
       values: [
         {
           name: 'twitter',
-          value: '#00aced',
+          value: '#00aced'
         },
         {
           name: 'facebook',
-          value: '#3b5998',
-        },
-      ],
-    },
-  },
+          value: '#3b5998'
+        }
+      ]
+    }
+  }
 }
 
 export const ForPc: Story = {}
@@ -32,9 +32,9 @@ export const ForPc: Story = {}
 export const ForMobile: Story = {
   parameters: {
     viewport: {
-      defaultViewport: 'mobile',
-    },
-  },
+      defaultViewport: 'mobile'
+    }
+  }
 }
 
 export default meta

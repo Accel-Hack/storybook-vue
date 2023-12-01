@@ -6,13 +6,13 @@ const routes: VueRouter.RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Top',
-    component: () => TopPage,
+    component: () => TopPage
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: () => ProfilePage,
-  },
+    component: () => ProfilePage
+  }
 ]
 
 export const createRouter = (type: 'memory' | 'history') => {

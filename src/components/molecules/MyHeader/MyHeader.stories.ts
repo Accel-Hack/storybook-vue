@@ -7,33 +7,33 @@ type Story = StoryObj<typeof MyHeader>
 const meta: Meta<typeof MyHeader> = {
   title: 'molecules/MyHeader',
   component: MyHeader,
-  render: (args) => ({
+  render: args => ({
     components: { MyHeader },
     setup() {
       return { args }
     },
-    template: "<MyHeader v-bind='args' />",
+    template: "<MyHeader v-bind='args' />"
   }),
   // tags: ["autodocs"],
   argTypes: {
     onLogin: { action: 'onLogin' },
     onLogout: { action: 'onLogout' },
-    onSignUp: { action: 'onSignUp' },
-  },
+    onSignUp: { action: 'onSignUp' }
+  }
 }
 
 // 以下略
 
 export const Login: Story = {
   args: {
-    isLoggedIn: true,
-  },
+    isLoggedIn: true
+  }
 }
 
 export const Logout: Story = {
   args: {
-    isLoggedIn: false,
-  },
+    isLoggedIn: false
+  }
 }
 
 export default meta

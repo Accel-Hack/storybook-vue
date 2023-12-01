@@ -12,12 +12,12 @@ const i18n = createI18n({
         title: 'Storybook 7 + Vue 3 + TypeScript サンプル',
         login: 'ログイン',
         logout: 'ログアウト',
-        signUp: '会員登録',
+        signUp: '会員登録'
       },
       // myPage コンポーネント内の文言
       page: {
-        content: 'コンテンツがここに表示されます。',
-      },
+        content: 'コンテンツがここに表示されます。'
+      }
     },
     // 英語の定義
     en: {
@@ -25,13 +25,13 @@ const i18n = createI18n({
         title: 'Storybook 7 + Vue 3 + TypeScript Sample',
         login: 'Login',
         logout: 'Logout',
-        signUp: 'Sign Up',
+        signUp: 'Sign Up'
       },
       page: {
-        content: 'Content will be displayed here\n',
-      },
-    },
-  },
+        content: 'Content will be displayed here\n'
+      }
+    }
+  }
 })
 
 export default i18n

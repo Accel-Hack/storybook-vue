@@ -9,13 +9,13 @@ type Story = StoryObj<typeof SignUpForm>
 const meta: Meta<typeof SignUpForm> = {
   title: 'pages/SignUpForm',
   component: SignUpForm,
-  render: (args) => ({
+  render: args => ({
     components: { SignUpForm },
     setup() {
       return { args }
     },
-    template: "<SignUpForm v-bind='args' />",
-  }),
+    template: "<SignUpForm v-bind='args' />"
+  })
 }
 
 export const Default: Story = {}
@@ -36,7 +36,7 @@ export const Complete: Story = {
     // エラーメッセージが表示されていないことをアサート
     expect(canvas.queryByText('名前を入力してください')).toBeNull()
     expect(canvas.queryByText('18歳以上でなければ登録できません')).toBeNull()
-  },
+  }
 }
 
 export const Error: Story = {
@@ -55,9 +55,9 @@ export const Error: Story = {
     // エラーメッセージが表示されていることをアサート
     await expect(canvas.queryByText('名前を入力してください')).toBeTruthy()
     await expect(
-      canvas.queryByText('18歳以上でなければ登録できません'),
+      canvas.queryByText('18歳以上でなければ登録できません')
     ).toBeTruthy()
-  },
+  }
 }
 
 export default meta

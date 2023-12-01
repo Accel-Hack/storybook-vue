@@ -6,9 +6,9 @@ const meta = {
   title: 'Pages',
   parameters: {
     backgrounds: {
-      default: 'light', // 背景色が白い前提で実装しているのでデフォルトで白色にする
-    },
-  },
+      default: 'light' // 背景色が白い前提で実装しているのでデフォルトで白色にする
+    }
+  }
 }
 
 function createPageStory(name: string): StoryObj {
@@ -23,8 +23,8 @@ function createPageStory(name: string): StoryObj {
 
         return { pageLoaded }
       },
-      template: `<template v-if="pageLoaded"><router-view /></template>`,
-    }),
+      template: `<template v-if="pageLoaded"><router-view /></template>`
+    })
   }
 }
 

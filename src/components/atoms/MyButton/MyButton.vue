@@ -5,7 +5,7 @@ const props = defineProps({
    */
   label: {
     type: String,
-    required: true,
+    required: true
   },
   /**
    * ボタンのカラーテーマ
@@ -15,7 +15,7 @@ const props = defineProps({
     default: 'primary',
     validator: (value: string) => {
       return ['primary', 'secondary'].includes(value)
-    },
+    }
   },
   /**
    * ボタンのサイズ
@@ -25,15 +25,15 @@ const props = defineProps({
     default: 'medium',
     validator: (value: string) => {
       return ['small', 'medium', 'large'].includes(value)
-    },
-  },
+    }
+  }
 })
 
 const emits = defineEmits([
   /**
    * ボタンがクリックされた
    */
-  'click',
+  'click'
 ])
 </script>
 
@@ -58,9 +58,11 @@ button {
   color: white;
   padding: 1rem;
 }
+
 button.primary {
   background-color: #1ea7fd;
 }
+
 button.secondary {
   background-color: #ff7e00;
 }

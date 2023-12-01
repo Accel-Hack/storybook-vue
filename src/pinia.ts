@@ -9,12 +9,12 @@ export type User = {
  */
 export const useCurrentUserStore = defineStore('currentUser', {
   state: () => ({
-    user: null as User | null,
+    user: null as User | null
   }),
   getters: {
     isLoggedIn(): boolean {
       return !!this.user
-    },
+    }
   },
   actions: {
     login(user: User) {
@@ -22,8 +22,8 @@ export const useCurrentUserStore = defineStore('currentUser', {
     },
     logout() {
       this.user = null
-    },
-  },
+    }
+  }
 })
 
 /**
