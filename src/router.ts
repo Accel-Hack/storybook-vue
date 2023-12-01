@@ -1,6 +1,6 @@
-import * as VueRouter from 'vue-router'
-import TopPage from '../src/components/pages/TopPage/TopPage.vue'
-import ProfilePage from '../src/components/pages/ProfilePage/ProfilePage.vue'
+import * as VueRouter from 'vue-router';
+import TopPage from '../src/components/pages/TopPage/TopPage.vue';
+import ProfilePage from '../src/components/pages/ProfilePage/ProfilePage.vue';
 
 const routes: VueRouter.RouteRecordRaw[] = [
   {
@@ -13,12 +13,12 @@ const routes: VueRouter.RouteRecordRaw[] = [
     name: 'Profile',
     component: () => ProfilePage
   }
-]
+];
 
 export const createRouter = (type: 'memory' | 'history') => {
   const history =
     type === 'memory'
       ? VueRouter.createMemoryHistory()
-      : VueRouter.createWebHistory()
-  return VueRouter.createRouter({ history, routes })
-}
+      : VueRouter.createWebHistory();
+  return VueRouter.createRouter({ history, routes });
+};

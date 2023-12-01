@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import MyButton from '../../atoms/MyButton/MyButton.vue'
+import MyButton from '../../atoms/MyButton/MyButton.vue';
 
 const props = defineProps({
   isLoggedIn: {
     type: Boolean,
     required: true
   }
-})
+});
 
 interface Emits {
-  (e: 'login'): void
-  (e: 'signUp'): void
-  (e: 'logout'): void
+  (e: 'login'): void;
+  (e: 'signUp'): void;
+  (e: 'logout'): void;
   // (e: "close", value: string): void;
 }
 
-const emit = defineEmits<Emits>()
+const emit = defineEmits<Emits>();
 </script>
 
 <template>

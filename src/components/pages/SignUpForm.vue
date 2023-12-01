@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 
 const state = reactive({
   name: '',
   age: 18
-})
+});
 const errors = reactive({
   name: '',
   age: ''
-})
+});
 
 const emits = defineEmits<{
-  (e: 'submit', payload: { name: string; age: number }): void
-}>()
+  (e: 'submit', payload: { name: string; age: number }): void;
+}>();
 
 function onSubmit() {
-  errors.name = state.name === '' ? '名前を入力してください' : ''
-  errors.age = state.age < 18 ? '18歳以上でなければ登録できません' : ''
+  errors.name = state.name === '' ? '名前を入力してください' : '';
+  errors.age = state.age < 18 ? '18歳以上でなければ登録できません' : '';
 
   // errors.name = state.name != "" ? "名前を入力してください" : "";
   // errors.age = state.age > 18 ? "18歳以上でなければ登録できません" : "";
 
   if (errors.name === '' && errors.age === '') {
-    emits('submit', { name: state.name, age: state.age })
+    emits('submit', { name: state.name, age: state.age });
   }
 }
 
 function onReset() {
-  state.name = ''
-  state.age = 18
+  state.name = '';
+  state.age = 18;
 }
 </script>
 

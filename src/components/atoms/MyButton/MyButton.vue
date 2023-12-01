@@ -14,7 +14,7 @@ const props = defineProps({
     type: String,
     default: 'primary',
     validator: (value: string) => {
-      return ['primary', 'secondary'].includes(value)
+      return ['primary', 'secondary'].includes(value);
     }
   },
   /**
@@ -24,17 +24,17 @@ const props = defineProps({
     type: String,
     default: 'medium',
     validator: (value: string) => {
-      return ['small', 'medium', 'large'].includes(value)
+      return ['small', 'medium', 'large'].includes(value);
     }
   }
-})
+});
 
 const emits = defineEmits([
   /**
    * ボタンがクリックされた
    */
   'click'
-])
+]);
 </script>
 
 <template>
