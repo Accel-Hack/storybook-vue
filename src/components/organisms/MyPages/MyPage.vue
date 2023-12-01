@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import MyHeader from "../../molecules/MyHeader/MyHeader.vue";
-import {useCurrentUserStore} from "../../../pinia.ts";
+import MyHeader from '../../molecules/MyHeader/MyHeader.vue'
+import { useCurrentUserStore } from '../../../pinia.ts'
 
-const currentUserStore = useCurrentUserStore();
+const currentUserStore = useCurrentUserStore()
 
 function login() {
-  currentUserStore.login( { id: 1 });
+  currentUserStore.login({ id: 1 })
 }
 
 function logout() {
-  currentUserStore.logout();
+  currentUserStore.logout()
 }
 
 function signUp() {
@@ -21,21 +20,24 @@ function signUp() {
 <template>
   <div>
     <MyHeader
-        :isLoggedIn="currentUserStore.isLoggedIn"
-        @login="login"
-        @logout="logout"
-        @signUp="signUp"
+      :is-logged-in="currentUserStore.isLoggedIn"
+      @login="login"
+      @logout="logout"
+      @sign-up="signUp"
     />
     <main>
       <div class="content-wrapper">
-        <div class="content" :key="i" v-for="i in 10">
-          {{ $t("page.content").repeat(20) }}
+        <div
+          v-for="i in 10"
+          :key="i"
+          class="content"
+        >
+          {{ $t('page.content').repeat(20) }}
         </div>
       </div>
     </main>
   </div>
 </template>
-
 
 <style>
 .content-wrapper {

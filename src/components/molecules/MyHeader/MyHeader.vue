@@ -1,44 +1,44 @@
 <script setup lang="ts">
-import MyButton from "../../atoms/MyButton/MyButton.vue";
+import MyButton from '../../atoms/MyButton/MyButton.vue'
 
 const props = defineProps({
   isLoggedIn: {
     type: Boolean,
     required: true,
   },
-});
+})
 
 interface Emits {
-  (e: "login"): void;
-  (e: "signUp"): void;
-  (e: "logout"): void;
+  (e: 'login'): void
+  (e: 'signUp'): void
+  (e: 'logout'): void
   // (e: "close", value: string): void;
 }
 
-const emit = defineEmits<Emits>();
+const emit = defineEmits<Emits>()
 </script>
 
 <template>
   <header>
-    <h1>{{ $t("header.title") }}</h1>
+    <h1>{{ $t('header.title') }}</h1>
     <div class="buttons">
       <template v-if="props.isLoggedIn">
         <MyButton
-            size="small"
-            :label="$t('header.logout')"
-            @click="$emit('logout')"
+          size="small"
+          :label="$t('header.logout')"
+          @click="emit('logout')"
         />
       </template>
       <template v-else>
         <MyButton
-            size="small"
-            :label="$t('header.login')"
-            @click="$emit('login')"
+          size="small"
+          :label="$t('header.login')"
+          @click="emit('login')"
         />
         <MyButton
-            size="small"
-            :label="$t('header.signUp')"
-            @click="$emit('signUp')"
+          size="small"
+          :label="$t('header.signUp')"
+          @click="emit('signUp')"
         />
       </template>
     </div>
@@ -47,7 +47,7 @@ const emit = defineEmits<Emits>();
 
 <style scoped>
 header {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
   display: flex;

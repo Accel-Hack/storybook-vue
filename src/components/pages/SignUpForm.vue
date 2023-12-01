@@ -1,54 +1,72 @@
 <script setup lang="ts">
-import {reactive} from "vue";
+import { reactive } from 'vue'
 
 const state = reactive({
-  name: "",
+  name: '',
   age: 18,
-});
+})
 const errors = reactive({
-  name: "",
-  age: "",
-});
+  name: '',
+  age: '',
+})
 
 const emits = defineEmits<{
-  (e: "submit", payload: { name: string; age: number }): void;
-}>();
+  (e: 'submit', payload: { name: string; age: number }): void
+}>()
 
 function onSubmit() {
-  errors.name = state.name === "" ? "名前を入力してください" : "";
-  errors.age = state.age < 18 ? "18歳以上でなければ登録できません" : "";
+  errors.name = state.name === '' ? '名前を入力してください' : ''
+  errors.age = state.age < 18 ? '18歳以上でなければ登録できません' : ''
 
   // errors.name = state.name != "" ? "名前を入力してください" : "";
   // errors.age = state.age > 18 ? "18歳以上でなければ登録できません" : "";
 
-  if (errors.name === "" && errors.age === "") {
-    emits("submit", {name: state.name, age: state.age});
+  if (errors.name === '' && errors.age === '') {
+    emits('submit', { name: state.name, age: state.age })
   }
 }
 
 function onReset() {
-  state.name = "";
-  state.age = 18;
+  state.name = ''
+  state.age = 18
 }
 </script>
 
 <template>
   <div class="sign-up-form">
     <h1>会員登録</h1>
-    <form class="form" @submit.prevent="onSubmit">
+    <form
+      class="form"
+      @submit.prevent="onSubmit"
+    >
       <div class="form-group">
         <label for="name">Name</label>
-        <input id="name" v-model="state.name" placeholder="Enter your email"/>
+        <input
+          id="name"
+          v-model="state.name"
+          placeholder="Enter your email"
+        >
         <span class="error">{{ errors.name }}</span>
       </div>
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" id="age" v-model="state.age"/>
+        <input
+          id="age"
+          v-model="state.age"
+          type="number"
+        >
         <span class="error">{{ errors.age }}</span>
       </div>
       <div class="form-group">
-        <button type="reset" @click="onReset">リセット</button>
-        <button type="submit">確定</button>
+        <button
+          type="reset"
+          @click="onReset"
+        >
+          リセット
+        </button>
+        <button type="submit">
+          確定
+        </button>
       </div>
     </form>
   </div>

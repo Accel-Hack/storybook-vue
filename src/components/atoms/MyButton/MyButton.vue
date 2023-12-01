@@ -12,9 +12,9 @@ const props = defineProps({
    */
   variant: {
     type: String,
-    default: "primary",
+    default: 'primary',
     validator: (value: string) => {
-      return ["primary", "secondary"].includes(value);
+      return ['primary', 'secondary'].includes(value)
     },
   },
   /**
@@ -22,30 +22,33 @@ const props = defineProps({
    */
   size: {
     type: String,
-    default: "medium",
+    default: 'medium',
     validator: (value: string) => {
-      return ["small", "medium", "large"].includes(value);
+      return ['small', 'medium', 'large'].includes(value)
     },
   },
-});
+})
 
 const emits = defineEmits([
   /**
    * ボタンがクリックされた
    */
-  "click",
-]);
+  'click',
+])
 </script>
 
 <template>
-  <button @click="emits('click')" :class="[props.variant, props.size]">
+  <button
+    :class="[props.variant, props.size]"
+    @click="emits('click')"
+  >
     {{ props.label }}
   </button>
 </template>
 
 <style scoped>
 button {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 3em;

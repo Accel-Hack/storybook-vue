@@ -1,52 +1,52 @@
-import MyButton from "./MyButton.vue";
-import type {Meta, StoryObj} from "@storybook/vue3";
+import MyButton from './MyButton.vue'
+import type { Meta, StoryObj } from '@storybook/vue3'
 
-type Story = StoryObj<typeof MyButton>;
+type Story = StoryObj<typeof MyButton>
 
 const meta: Meta<typeof MyButton> = {
-  title: "atoms/MyButton",
+  title: 'atoms/MyButton',
   component: MyButton,
   render: (args) => ({
-    components: {MyButton},
+    components: { MyButton },
     setup() {
-      return {args};
+      return { args }
     },
     template: "<MyButton v-bind='args'  label='Sample'/>",
   }),
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    label: "ボタン",
-    variant: "primary",
-    size: "medium",
+    label: 'ボタン',
+    variant: 'primary',
+    size: 'medium',
   },
   argTypes: {
     variant: {
       control: {
-        type: "inline-radio",
+        type: 'inline-radio',
       },
-      options: ["primary", "secondary"],
+      options: ['primary', 'secondary'],
     },
     size: {
       control: {
-        type: "select",
+        type: 'select',
       },
-      options: ["small", "medium", "large"],
+      options: ['small', 'medium', 'large'],
     },
   },
-};
+}
 
 export const Default: Story = {
   args: {
-    label: "ボタン",
-    variant: "primary",
-    size: "medium",
+    label: 'ボタン',
+    variant: 'primary',
+    size: 'medium',
   },
   // ストーリーごとに parameters を設定
   parameters: {
     backgrounds: {
-      default: "light",
+      default: 'light',
     },
   },
-};
+}
 
-export default meta;
+export default meta
