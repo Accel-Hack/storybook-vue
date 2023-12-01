@@ -34,8 +34,8 @@ export const Complete: Story = {
     await userEvent.click(submitButton);
 
     // エラーメッセージが表示されていないことをアサート
-    expect(canvas.queryByText('名前を入力してください')).toBeNull();
-    expect(canvas.queryByText('18歳以上でなければ登録できません')).toBeNull();
+    await expect(canvas.queryByText('名前を入力してください')).toBeNull();
+    await expect(canvas.queryByText('18歳以上でなければ登録できません')).toBeNull();
   }
 };
 
