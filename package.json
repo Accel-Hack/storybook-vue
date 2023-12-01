@@ -6,17 +6,36 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook:start": "storybook dev --port 6006",
+    "storybook:test": "test-storybook --url http://localhost:6006"
   },
   "dependencies": {
-    "vue": "^3.3.8"
+    "pinia": "^2.1.7",
+    "vue": "^3.3.9",
+    "vue-i18n": "9",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@storybook/vue3-vite": "^7.5.3",
+    "@storybook/addon-actions": "^7.6.2",
+    "@storybook/addon-backgrounds": "^7.6.2",
+    "@storybook/addon-controls": "7.6.2",
+    "@storybook/addon-docs": "7.6.2",
+    "@storybook/addon-interactions": "7.6.2",
+    "@storybook/addon-measure": "7.6.2",
+    "@storybook/addon-outline": "^7.6.2",
+    "@storybook/addon-toolbars": "7.6.2",
+    "@storybook/addon-viewport": "^7.6.2",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/test-runner": "^0.16.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/vue3-vite": "^7.6.2",
     "@vitejs/plugin-vue": "^4.5.0",
-    "storybook": "7.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "7.6.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "vue-tsc": "^1.8.22"
+    "vite": "^5.0.4",
+    "vue-tsc": "^1.8.24"
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MyButton from "./MyButton.vue";
+import MyButton from "../../atoms/MyButton/MyButton.vue";
 
 const props = defineProps({
   isLoggedIn: {
@@ -8,19 +8,38 @@ const props = defineProps({
   },
 });
 
-const emits = defineEmits(["login", "signUp", "logout"]);
+interface Emits {
+  (e: "login"): void;
+  (e: "signUp"): void;
+  (e: "logout"): void;
+  // (e: "close", value: string): void;
+}
+
+const emit = defineEmits<Emits>();
 </script>
 
 <template>
   <header>
-    <h1>Storybook 7 + Vue 3 + TypeScript サンプル</h1>
+    <h1>{{ $t("header.title") }}</h1>
     <div class="buttons">
       <template v-if="props.isLoggedIn">
-        <MyButton size="small" label="ログアウト" @click="$emit('logout')" />
+        <MyButton
+            size="small"
+            :label="$t('header.logout')"
+            @click="$emit('logout')"
+        />
       </template>
       <template v-else>
-        <MyButton size="small" label="ログイン" @click="$emit('login')" />
-        <MyButton size="small" label="会員登録" @click="$emit('signUp')" />
+        <MyButton
+            size="small"
+            :label="$t('header.login')"
+            @click="$emit('login')"
+        />
+        <MyButton
+            size="small"
+            :label="$t('header.signUp')"
+            @click="$emit('signUp')"
+        />
       </template>
     </div>
   </header>
