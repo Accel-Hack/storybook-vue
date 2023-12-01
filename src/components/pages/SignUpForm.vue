@@ -35,38 +35,20 @@ function onReset() {
 <template>
   <div class="sign-up-form">
     <h1>会員登録</h1>
-    <form
-      class="form"
-      @submit.prevent="onSubmit"
-    >
+    <form class="form" @submit.prevent="onSubmit">
       <div class="form-group">
         <label for="name">Name</label>
-        <input
-          id="name"
-          v-model="state.name"
-          placeholder="Enter your email"
-        >
+        <input id="name" v-model="state.name" placeholder="Enter your email" />
         <span class="error">{{ errors.name }}</span>
       </div>
       <div class="form-group">
         <label for="age">Age</label>
-        <input
-          id="age"
-          v-model="state.age"
-          type="number"
-        >
+        <input id="age" v-model="state.age" type="number" />
         <span class="error">{{ errors.age }}</span>
       </div>
       <div class="form-group">
-        <button
-          type="reset"
-          @click="onReset"
-        >
-          リセット
-        </button>
-        <button type="submit">
-          確定
-        </button>
+        <button type="reset" @click="onReset">リセット</button>
+        <button type="submit">確定</button>
       </div>
     </form>
   </div>

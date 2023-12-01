@@ -27,11 +27,7 @@ function signUp() {
     />
     <main>
       <div class="content-wrapper">
-        <div
-          v-for="i in 10"
-          :key="i"
-          class="content"
-        >
+        <div v-for="i in 10" :key="i" class="content">
           {{ $t('page.content').repeat(20) }}
         </div>
       </div>

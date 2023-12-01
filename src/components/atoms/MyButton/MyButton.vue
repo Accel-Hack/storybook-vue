@@ -38,10 +38,7 @@ const emits = defineEmits([
 </script>
 
 <template>
-  <button
-    :class="[props.variant, props.size]"
-    @click="emits('click')"
-  >
+  <button :class="[props.variant, props.size]" @click="emits('click')">
     {{ props.label }}
   </button>
 </template>
