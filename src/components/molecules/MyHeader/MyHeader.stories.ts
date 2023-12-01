@@ -1,7 +1,7 @@
-import MyHeader from './MyHeader.vue';
-import type { Meta, StoryObj } from '@storybook/vue3';
+import MyHeader from './MyHeader.vue'
+import type { Meta, StoryObj } from '@storybook/vue3'
 
-type Story = StoryObj<typeof MyHeader>;
+type Story = StoryObj<typeof MyHeader>
 
 // 前略
 const meta: Meta<typeof MyHeader> = {
@@ -10,7 +10,7 @@ const meta: Meta<typeof MyHeader> = {
   render: args => ({
     components: { MyHeader },
     setup() {
-      return { args };
+      return { args }
     },
     template: "<MyHeader v-bind='args' />"
   }),
@@ -20,7 +20,7 @@ const meta: Meta<typeof MyHeader> = {
     onLogout: { action: 'onLogout' },
     onSignUp: { action: 'onSignUp' }
   }
-};
+}
 
 // 以下略
 
@@ -28,12 +28,12 @@ export const Login: Story = {
   args: {
     isLoggedIn: true
   }
-};
+}
 
 export const Logout: Story = {
   args: {
     isLoggedIn: false
   }
-};
+}
 
-export default meta;
+export default meta

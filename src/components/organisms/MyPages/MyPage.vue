@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import MyHeader from '../../molecules/MyHeader/MyHeader.vue';
-import { useCurrentUserStore } from '../../../pinia.ts';
+import MyHeader from '../../molecules/MyHeader/MyHeader.vue'
+import { useCurrentUserStore } from '../../../pinia.ts'
 
-const currentUserStore = useCurrentUserStore();
+const currentUserStore = useCurrentUserStore()
 
 function login() {
-  currentUserStore.login({ id: 1 });
+  currentUserStore.login({ id: 1 })
 }
 
 function logout() {
-  currentUserStore.logout();
+  currentUserStore.logout()
 }
 
 function signUp() {

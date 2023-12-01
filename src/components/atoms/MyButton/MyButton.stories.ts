@@ -1,7 +1,7 @@
-import MyButton from './MyButton.vue';
-import type { Meta, StoryObj } from '@storybook/vue3';
+import MyButton from './MyButton.vue'
+import type { Meta, StoryObj } from '@storybook/vue3'
 
-type Story = StoryObj<typeof MyButton>;
+type Story = StoryObj<typeof MyButton>
 
 const meta: Meta<typeof MyButton> = {
   title: 'atoms/MyButton',
@@ -9,7 +9,7 @@ const meta: Meta<typeof MyButton> = {
   render: args => ({
     components: { MyButton },
     setup() {
-      return { args };
+      return { args }
     },
     template: "<MyButton v-bind='args'  label='Sample'/>"
   }),
@@ -33,7 +33,7 @@ const meta: Meta<typeof MyButton> = {
       options: ['small', 'medium', 'large']
     }
   }
-};
+}
 
 export const Default: Story = {
   args: {
@@ -47,6 +47,6 @@ export const Default: Story = {
       default: 'light'
     }
   }
-};
+}
 
-export default meta;
+export default meta

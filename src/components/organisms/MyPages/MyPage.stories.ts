@@ -1,7 +1,7 @@
-import MyPage from './MyPage.vue';
-import type { Meta, StoryObj } from '@storybook/vue3';
+import MyPage from './MyPage.vue'
+import type { Meta, StoryObj } from '@storybook/vue3'
 
-type Story = StoryObj<typeof MyPage>;
+type Story = StoryObj<typeof MyPage>
 
 const meta: Meta<typeof MyPage> = {
   title: 'organisms/MyPage',
@@ -25,9 +25,9 @@ const meta: Meta<typeof MyPage> = {
       ]
     }
   }
-};
+}
 
-export const ForPc: Story = {};
+export const ForPc: Story = {}
 
 export const ForMobile: Story = {
   parameters: {
@@ -35,6 +35,6 @@ export const ForMobile: Story = {
       defaultViewport: 'mobile'
     }
   }
-};
+}
 
-export default meta;
+export default meta

@@ -1,8 +1,8 @@
-import { createPinia, defineStore } from 'pinia';
+import { createPinia, defineStore } from 'pinia'
 
 export type User = {
-  id: number;
-};
+  id: number
+}
 
 /**
  * ログイン中ユーザーの読み書きを行うストア
@@ -13,22 +13,22 @@ export const useCurrentUserStore = defineStore('currentUser', {
   }),
   getters: {
     isLoggedIn(): boolean {
-      return !!this.user;
+      return !!this.user
     }
   },
   actions: {
     login(user: User) {
-      this.user = user;
+      this.user = user
     },
     logout() {
-      this.user = null;
+      this.user = null
     }
   }
-});
+})
 
 /**
  * Pinia のセットアップ
  */
-export const pinia = createPinia();
+export const pinia = createPinia()
 
-export default pinia;
+export default pinia
