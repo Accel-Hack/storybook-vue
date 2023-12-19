@@ -6,13 +6,13 @@
   "scripts": {
     "latest": "yarn upgrade --latest",
     "dev": "vite --host",
-    "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "build": "vue-tsc && vite build",
+    "format": "yarn format:prettier && yarn format:lint",
+    "format:lint": "eslint --fix src/*.{ts,vue} && eslint --fix src/**/*.{ts,vue}",
+    "format:prettier": "prettier -w src/*.{ts,vue} && prettier -w src/**/*.{ts,vue}",
     "storybook:start": "storybook dev --port 6006",
-    "storybook:test": "test-storybook --url http://localhost:6006",
-    "lint": "eslint --fix src/*.{ts,vue} && eslint --fix src/**/*.{ts,vue}",
-    "format": "prettier -w src/*.{ts,vue} && prettier -w src/**/*.{ts,vue}",
-    "fix": "yarn format && yarn lint"
+    "storybook:test": "test-storybook --url http://localhost:6006"
   },
   "dependencies": {
     "pinia": "^2.1.7",
