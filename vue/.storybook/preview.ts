@@ -62,7 +62,7 @@ const router = createRouter("memory");
 setup((app) => {
   // app が Vue インスタンスにあたるので Vue I18n インスタンスを注入する
   // 同一の Vue インスタンスに対して setup 関数は複数回実行されるため、既に注入済みかを確認する
-  if (!app.__VUE_I18N__) {
+  if (!app['__VUE_I18N__']) {
     app.use(i18n);
     app.use(pinia);
     app.use(router);

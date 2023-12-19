@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    container_name: vue
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./vue:/usr/src/app
+    command: "tail -f /dev/null"
+    ports:
+      - "5173:5173"
+      - "6006:6006"
